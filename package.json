@@ -20,7 +20,7 @@
     "vite": "^8.3.2"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
+    "bcryptjs": "^3.0.3",
     "express": "^5.2.1",
     "express-rate-limit": "^8.7.0",
     "express-session": "^1.18.0",
