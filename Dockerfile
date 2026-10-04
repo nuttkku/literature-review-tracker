@@ -1,5 +1,5 @@
 # ── Build stage: compile the Svelte UI into dist/ ─────────────────────────────
-FROM node:24-alpine AS build
+FROM node:26-alpine AS build
 
 WORKDIR /app
 COPY package.json package-lock.json ./
@@ -11,7 +11,7 @@ RUN npm run build
 # ── Production stage ──────────────────────────────────────────────────────────
 # A Node server (not a static host) is required: sign-in, 2FA and user management read and write
 # the user store at runtime.
-FROM node:24-alpine AS prod
+FROM node:26-alpine AS prod
 
 # Pick up OS security patches (e.g. OpenSSL) released after the base image was published.
 RUN apk update && apk upgrade --no-cache
