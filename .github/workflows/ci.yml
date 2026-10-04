@@ -125,7 +125,7 @@ jobs:
       - name: Upload results to GitHub code scanning
         if: steps.token.outputs.present == 'true' && !cancelled()
         continue-on-error: true # code scanning needs a public repo or GitHub Advanced Security
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: .
       - name: Record dependency snapshot in Snyk (main only)
